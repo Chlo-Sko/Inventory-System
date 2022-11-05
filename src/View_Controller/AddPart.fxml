@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="400.0" style="-fx-background-color: #D8D8D8;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View_Controller.AddPartController">
+   <children>
+      <VBox alignment="CENTER_LEFT" prefHeight="400.0" prefWidth="400.0">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="46.0" prefWidth="530.0" spacing="40.0">
+               <children>
+                  <Label text="Add Part">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <padding>
+                        <Insets left="30.0" />
+                     </padding>
+                  </Label>
+                  <RadioButton fx:id="partInhouseRButton" mnemonicParsing="false" onAction="#onActionPartInhouse" text="In-House">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="addPartTG" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="partOutsourcedRButton" mnemonicParsing="false" onAction="#onActionPartOutsourced" text="Outsourced" toggleGroup="$addPartTG" />
+               </children>
+            </HBox>
+            <GridPane alignment="CENTER_LEFT" prefHeight="281.0" prefWidth="600.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="285.0" minWidth="10.0" prefWidth="128.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="493.0" minWidth="10.0" prefWidth="252.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="15.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                     <children>
+                        <TextField fx:id="partMaxText" prefHeight="25.0" prefWidth="66.0" promptText="Max">
+                           <font>
+                              <Font name="System Italic" size="12.0" />
+                           </font>
+                        </TextField>
+                        <Label text="Min" />
+                        <TextField fx:id="partMinText" prefHeight="25.0" prefWidth="66.0" promptText="Min">
+                           <font>
+                              <Font name="System Italic" size="12.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <Label text="ID" />
+                  <Label text="Name" GridPane.rowIndex="1" />
+                  <Label text="Inv" GridPane.rowIndex="2" />
+                  <Label text="Price/Cost" GridPane.rowIndex="3" />
+                  <Label text="Max" GridPane.rowIndex="4" />
+                  <Label fx:id="companyNameLbl" text="Company Name" GridPane.rowIndex="5" />
+                  <TextField fx:id="partPriceText" maxWidth="25.0" minWidth="150.0" prefWidth="25.0" promptText="Price/Cost" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="partNameText" maxWidth="25.0" minWidth="150.0" prefWidth="25.0" promptText="Part Name" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="partInvText" maxWidth="25.0" minWidth="150.0" prefWidth="25.0" promptText="Inv" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="partIDText" editable="false" maxWidth="25.0" minWidth="150.0" prefWidth="25.0" style="-fx-background-color: #D8D8D8;" text="Auto Gen - Disabled" GridPane.columnIndex="1">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="partCompanyNameText" maxWidth="25.0" minWidth="150.0" prefWidth="25.0" promptText="Comp Nm" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                  </TextField>
+               </children>
+               <padding>
+                  <Insets left="65.0" />
+               </padding>
+            </GridPane>
+            <HBox alignment="CENTER_RIGHT" prefHeight="63.0" prefWidth="600.0" spacing="15.0">
+               <children>
+                  <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onActionAddPart" prefHeight="30.0" prefWidth="80.0" text="Save" />
+                  <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onActionCancel" prefHeight="30.0" prefWidth="80.0" text="Cancel" />
+               </children>
+               <padding>
+                  <Insets left="10.0" right="30.0" />
+               </padding>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
